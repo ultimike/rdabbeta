@@ -1,0 +1,40 @@
+_core:
+  default_config_hash: WWvo9_41v-oaqjbKdBtohSrem-s9w-7MIfvCWjZvAI4
+prompt_logging: false
+prompt_logging_tags: ''
+default_providers:
+  chat:
+    provider_id: amazeeio
+    model_id: claude-4-6-sonnet
+  chat_with_complex_json:
+    provider_id: amazeeio
+    model_id: chat_with_complex_json
+  chat_with_image_vision:
+    provider_id: openai
+    model_id: gpt-5.6-luna
+  chat_with_structured_response:
+    provider_id: amazeeio
+    model_id: claude-4-7-opus
+  chat_with_tools:
+    provider_id: anthropic
+    model_id: claude-sonnet-5
+  embeddings:
+    provider_id: amazeeio
+    model_id: embeddings
+  moderation:
+    provider_id: openai
+    model_id: omni-moderation-latest
+  speech_to_text:
+    provider_id: openai
+    model_id: whisper-1
+  text_to_image:
+    provider_id: openai
+    model_id: gpt-image-1
+  text_to_speech:
+    provider_id: openai
+    model_id: tts-1-hd
+default_vdb_provider: ''
+request_timeout: 60
+allowed_hosts: {  }
+allowed_hosts_rewrite_links: false
+global_guardrails: {  }

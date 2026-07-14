@@ -1,0 +1,13 @@
+uuid: 0318174b-c536-4ee8-acfd-3d8debfae72e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0AaX8iomJNqkVyot7YhxVYOL1oddRGmdn2DWTlEMhTg
+id: security_javascript_protocol
+label: 'Security: JavaScript Protocol'
+description: 'Detects javascript: protocol strings commonly used in XSS attacks via href or src attributes.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/javascript\s*:/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

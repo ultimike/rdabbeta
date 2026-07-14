@@ -1,0 +1,8 @@
+uuid: b1c3563a-9733-4d95-acb2-9adee3d93a9d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1Dx7U2HWIzQArq3FJA7qpXjKy5fLAQHadkpAUGa8_5w
+label: Generic
+id: generic

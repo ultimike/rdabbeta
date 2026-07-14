@@ -1,0 +1,13 @@
+uuid: 999ec91b-b83d-4568-8b73-466c9eac8c37
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qp24hPsKv9Ci86m8TLrju-Ij07qgdqVNhfbI0yR_SCY
+id: pii_iban
+label: 'PII: IBAN'
+description: 'Detects IBAN bank account numbers in text. Particularly relevant for European sites where IBAN is commonly used in financial correspondence and documents.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/(?<!\w)[A-Z]{2}\d{2}(?:\s?[A-Z0-9]){11,30}(?!\w)/i'
+  violation_message: 'This message was blocked because it contains a bank account number (IBAN).'

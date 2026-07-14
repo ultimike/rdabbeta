@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: FNT2zzMLKeg6TviGJAYUvRSjAJmBvmdLnh9USO58MAc
+moderations:
+  -
+    provider: amazeeio
+    tags: ''
+    model_title: ''
+    models:
+      - openai__omni-moderation-latest
+  -
+    provider: anthropic
+    tags: ''
+    model_title: ''
+    models:
+      - openai__omni-moderation-latest

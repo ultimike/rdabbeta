@@ -1,0 +1,13 @@
+uuid: db75a840-dd00-4acd-be9a-0ecd8e87fb92
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dQXIXEhcvsGm8XpuEA8a-u6p6t_ks6exivk7uxTBNcA
+id: security_javascript_execution_functions
+label: 'Security: JavaScript Execution Functions'
+description: 'Detects common JavaScript execution patterns such as eval(), setTimeout(), and document.write() that may appear in prompt injection attempts targeting agentic workflows with code execution tools.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/\b(eval|setTimeout|setInterval|document\.write|document\.cookie)\s*\(/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

@@ -1,0 +1,13 @@
+uuid: 718c1f74-502a-47aa-84c4-9f719dcd37a9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7UklfY0_MX2j2S0n92h5a9jyeRx4GCZBJSQ2_PkzbSU
+id: security_script_tag_injection
+label: 'Security: Script Tag Injection'
+description: 'Detects attempts to inject <script> tags into prompts. Relevant when AI output is rendered in a browser context such as CKEditor or a content field.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/<\s*script[\s>]/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

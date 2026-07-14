@@ -1,0 +1,13 @@
+uuid: b6afad90-39f6-4c2a-a6d7-25e4112c3f3c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kuYzuyxoJ5U1f63ScxPil84lNIV4QuNa3Xn1E0Bc6H8
+id: security_dangerous_html_tags
+label: 'Security: Dangerous HTML Tags'
+description: 'Detects HTML tags that can be used to embed external content or execute code, including <iframe>, <object>, <embed>, and <form>.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/<\s*(iframe|object|embed|form|base)[\s>]/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

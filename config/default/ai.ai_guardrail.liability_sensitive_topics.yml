@@ -1,0 +1,36 @@
+uuid: 888ac333-5802-44a2-ace9-e60b9da4c3c5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SCzkIg_k9GvDC2aLfDjIaGYZQrX8XnO5TWsEs-8o964
+id: liability_sensitive_topics
+label: 'Liability: Sensitive Topics'
+description: 'Detects socially divisive or politically charged subjects where any AI response carries reputational risk for the site owner. Suitable as a default block for any public-facing deployment.'
+guardrail: restrict_to_topic
+guardrail_settings:
+  valid_topics: ''
+  invalid_topics: |-
+    politics
+    political parties
+    elections
+    race
+    racism
+    religion
+    war
+    armed conflict
+    ethnicity
+    immigration
+    abortion
+    gun control
+    capital punishment
+    euthanasia
+    terrorism
+    genocide
+    sexual orientation
+    gender identity
+    drug legalisation
+    extremism
+    human trafficking
+  invalid_topics_present_message: 'This assistant is not able to discuss that topic.'
+  valid_topics_missing_message: ''

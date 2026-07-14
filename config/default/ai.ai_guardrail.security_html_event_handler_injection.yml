@@ -1,0 +1,13 @@
+uuid: b988c8e3-36be-44e4-9f46-22636ad83c82
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 0DiyUDW73SvMfYtM6esU2F_25pxvEMRCibRzWZG9ax0
+id: security_html_event_handler_injection
+label: 'Security: HTML Event Handler Injection'
+description: 'Detects inline HTML event handlers such as onerror=, onload=, onclick= that are commonly used to execute JavaScript through injected markup.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/<[^>]*\bon[a-z]+\s*=/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

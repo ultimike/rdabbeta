@@ -1,0 +1,13 @@
+uuid: 36243583-8f73-4261-86f6-62c126885803
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xXWpNKLIJGP_Vo7IhSTGYXf2jPEDwNGJvO8i8ygv3S4
+id: security_css_expression_injection
+label: 'Security: CSS Expression Injection'
+description: 'Detects CSS expression() syntax and url(javascript:...) patterns used for CSS-based code execution, primarily in older browsers but still a relevant injection vector.'
+guardrail: regexp_guardrail
+guardrail_settings:
+  regexp_pattern: '/(expression\s*\(|url\s*\(\s*[''"]?\s*javascript)/i'
+  violation_message: 'This message was blocked because it contains potentially malicious content.'

@@ -1,0 +1,22 @@
+uuid: e2ff2841-2c7d-465d-af5a-4cc92330b95c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Y9TURnQKb91o9NQBbVkFpwmEI-qSnk5ileP3LIK7THQ
+id: liability_legal_advice
+label: 'Liability: Legal Advice'
+description: 'Detects requests for legal opinions, contract interpretation, or litigation guidance.'
+guardrail: restrict_to_topic
+guardrail_settings:
+  valid_topics: ''
+  invalid_topics: |-
+    legal advice
+    legal opinion
+    contract interpretation
+    litigation strategy
+    regulatory compliance advice
+    criminal defence advice
+    legal liability assessment
+  invalid_topics_present_message: 'This assistant cannot provide legal advice. Please consult a qualified legal professional.'
+  valid_topics_missing_message: ''
