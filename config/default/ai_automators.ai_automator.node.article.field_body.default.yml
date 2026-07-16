@@ -1,0 +1,50 @@
+uuid: 8ab93499-9c0b-4488-9382-27298189bcd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_body
+id: node.article.field_body.default
+label: 'Body Default'
+rule: llm_text_create_summary
+input_mode: token
+weight: 100
+worker_type: direct
+entity_type: node
+bundle: article
+field_name: field_body
+edit_mode: true
+base_field: field_body
+prompt: 'Create a 10 word summary, using alliteration.'
+token: |-
+  Create a 10 word summary from the following text, using alliteration:
+
+  -------------------------------
+  [node:field_body:value]
+guardrail_set_id: null
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_text_create_summary
+  automator_mode: token
+  automator_base_field: field_body
+  automator_prompt: 'Create a 10 word summary, using alliteration.'
+  automator_token: |-
+    Create a 10 word summary from the following text, using alliteration:
+
+    -------------------------------
+    [node:field_body:value]
+  automator_edit_mode: 1
+  automator_label: 'Body Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_queue_allow_requeue: 0
+  automator_guardrail_set_id: ''
+  automator_ai_provider: anthropic
+  automator_ai_model: claude-sonnet-5
+  automator_configuration_max_tokens: '4096'
+  automator_configuration_temperature: ''
+  automator_configuration_top_k: ''
+  automator_configuration_image_field: ''
+  automator_configuration_image_style: ''
+  automator_joiner: ''
+  automator_joiner_other: ''

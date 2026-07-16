@@ -28,7 +28,45 @@ settings:
       - code
       - '|'
       - sourceEditing
+      - aickeditor
   plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_ckeditor_completion:
+          enabled: true
+          provider: amazeeio__claude-4-6-sonnet
+        ai_ckeditor_help:
+          enabled: true
+        ai_ckeditor_modify_prompt:
+          enabled: true
+          provider: amazeeio__claude-4-6-sonnet
+        ai_ckeditor_reformat_html:
+          enabled: true
+          provider: amazeeio__claude-4-6-sonnet
+        ai_ckeditor_spellfix:
+          enabled: false
+          provider: amazeeio__claude-4-6-sonnet
+        ai_ckeditor_summarize:
+          enabled: true
+          provider: amazeeio__claude-4-6-sonnet
+        ai_ckeditor_tone:
+          enabled: true
+          provider: amazeeio__claude-4-6-sonnet
+          autocreate: false
+          tone_vocabulary: writing_tones
+          use_description: false
+        ai_ckeditor_translate:
+          enabled: false
+          provider: amazeeio__claude-4-6-sonnet
+          language_source: tax
+          autocreate: false
+          translate_vocabulary: tags
+          use_description: false
     ckeditor5_heading:
       enabled_headings:
         - heading2

@@ -1,0 +1,36 @@
+uuid: 997ffe15-7a44-466c-a7fa-c5aa2c96d757
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.field_image
+id: node.article.field_image.default
+label: 'Acme AI image alt text automator'
+rule: llm_image_alt_text
+input_mode: token
+weight: 100
+worker_type: field_widget_actions
+entity_type: node
+bundle: article
+field_name: field_image
+edit_mode: true
+base_field: revision_log
+prompt: ''
+token: 'Describe this image in 125 characters or less using language that is suitable for an HTML "alt" property on the image. Focus on the context and purpose of the image.'
+guardrail_set_id: null
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_image_alt_text
+  automator_mode: token
+  automator_base_field: revision_log
+  automator_prompt: ''
+  automator_token: 'Describe this image in 125 characters or less using language that is suitable for an HTML "alt" property on the image. Focus on the context and purpose of the image.'
+  automator_edit_mode: 1
+  automator_label: 'Acme AI image alt text automator'
+  automator_weight: '100'
+  automator_worker_type: field_widget_actions
+  automator_queue_allow_requeue: 0
+  automator_guardrail_set_id: ''
+  automator_ai_provider: default_vision
+  automator_configuration_image_field: field_image
+  automator_configuration_image_style: ''

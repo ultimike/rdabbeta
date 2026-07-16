@@ -37,6 +37,8 @@ pricing:
     input_per_token: 0.0
     output_per_token: 0.0
     cache_read_per_token: 0.0
+usage_retention_days: 0
+local_provider_ids: {  }
 quota:
   default_monthly_tokens: 10000
   output_ratio: 0.2
@@ -46,7 +48,9 @@ quota:
   role_defaults: {  }
 alerts:
   threshold_pct: 75
-  emails: {  }
+  emails:
+    - manello@example.com
+  webhook_url: ''
 notifications:
   user_on_fallback: true
   admin_on_fallback: true

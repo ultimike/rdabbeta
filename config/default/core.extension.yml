@@ -3,6 +3,9 @@ _core:
 module:
   ai: 0
   ai_api_explorer: 0
+  ai_automators: 0
+  ai_ckeditor: 0
+  ai_content_suggestions: 0
   ai_logging: 0
   ai_metering: 0
   ai_provider_amazeeio: 0
@@ -24,6 +27,7 @@ module:
   editor: 0
   field: 0
   field_ui: 0
+  field_widget_actions: 0
   file: 0
   filter: 0
   help: 0
@@ -47,6 +51,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   update: 0
   user: 0
   views_data_export: 0

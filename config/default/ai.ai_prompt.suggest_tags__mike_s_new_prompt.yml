@@ -1,0 +1,8 @@
+uuid: 9104530b-b75c-4bcb-9cb1-b366ad06e52b
+langcode: en
+status: true
+dependencies: {  }
+id: suggest_tags__mike_s_new_prompt
+label: "Mike's new prompt"
+type: suggest_tags
+prompt: 'Suggest no more than three words to classify the following text using the same language as the input text. The words must be nouns in a comma delimited list'
