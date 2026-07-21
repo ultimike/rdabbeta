@@ -1,0 +1,37 @@
+uuid: 5884b9c3-a067-46da-815a-5cc5ecce0d53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news.field_address
+    - field.field.node.news.field_body
+    - node.type.news
+  module:
+    - address
+    - text
+    - user
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  field_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

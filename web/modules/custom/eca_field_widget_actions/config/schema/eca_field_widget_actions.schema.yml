@@ -1,0 +1,18 @@
+eca.event.plugin.eca_field_widget_actions:eca_field_widget:
+  type: eca.event.plugin
+  label: 'ECA Field Widget'
+
+action.configuration.eca_set_field_widget_value:
+  type: mapping
+  label: 'Configuration for the "Set field widget value" action'
+  mapping:
+    widget_value:
+      type: string
+      label: 'Field widget value'
+
+field_widget_action.plugin.eca_field_widget*:
+  type: field_widget_action_plugin_base
+  mapping:
+    direct_fill:
+      type: boolean
+      label: 'Fill the field directly'

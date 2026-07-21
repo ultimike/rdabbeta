@@ -1,0 +1,30 @@
+uuid: 1d0c0b96-7d21-4dea-a938-0eb14c67e7f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.book_chapter.field_chapter_text
+    - node.type.book_chapter
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: IkyqK4ARi0BomDdSShtsnD2XmRC0dNbnDOb2_YZZ2j8
+id: node.book_chapter.default
+targetEntityType: node
+bundle: book_chapter
+mode: default
+content:
+  field_chapter_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

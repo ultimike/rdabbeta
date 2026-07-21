@@ -1,0 +1,43 @@
+uuid: aef6adc0-cdb2-4c2f-af3a-e0954a027c09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.image_with_full_description.field_image
+    - field.field.node.image_with_full_description.field_image_description
+    - image.style.wide
+    - node.type.image_with_full_description
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: iWMTrgN9MPd6A0JjKWW3I4uerA5EESY6zVxLB9VmrD4
+id: node.image_with_full_description.default
+targetEntityType: node
+bundle: image_with_full_description
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

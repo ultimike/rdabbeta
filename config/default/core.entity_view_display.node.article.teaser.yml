@@ -1,64 +1,44 @@
-uuid: 3ce95e7e-e92f-4fb3-82f7-2c152ffaeb12
+uuid: bf88778b-4745-439f-82ac-80e308457445
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.article.ai_automator_status
     - field.field.node.article.field_body
     - field.field.node.article.field_image
     - field.field.node.article.field_social_media_text
     - field.field.node.article.field_tags
     - field.field.node.article.field_topics
-    - image.style.wide
+    - image.style.medium
     - node.type.article
   module:
     - image
-    - text
     - user
-id: node.article.default
+id: node.article.teaser
 targetEntityType: node
 bundle: article
-mode: default
+mode: teaser
 content:
-  field_body:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_image:
     type: image
     label: hidden
     settings:
-      image_link: ''
-      image_style: wide
+      image_link: content
+      image_style: medium
       image_loading:
-        attribute: eager
+        attribute: lazy
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_topics:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
+    weight: -1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 100
     region: content
 hidden:
   ai_automator_status: true
+  field_body: true
   field_social_media_text: true
+  field_tags: true
+  field_topics: true

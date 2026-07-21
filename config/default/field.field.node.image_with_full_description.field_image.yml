@@ -1,16 +1,18 @@
-uuid: eaa109db-3176-4aa6-a0ab-37747bf1b0c8
+uuid: 661deda1-3874-44bb-afa9-6b02ef3af164
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_image
-    - node.type.article
+    - node.type.image_with_full_description
   module:
     - image
-id: node.article.field_image
+_core:
+  default_config_hash: 3sVNIApzuRsfkQ6Yp2qBdvxPlRYgNDhq94-efUxOL6M
+id: node.image_with_full_description.field_image
 field_name: field_image
 entity_type: node
-bundle: article
+bundle: image_with_full_description
 label: Image
 description: ''
 required: false

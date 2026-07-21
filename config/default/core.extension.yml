@@ -1,11 +1,14 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  address: 0
   ai: 0
+  ai_agents: 0
   ai_api_explorer: 0
   ai_automators: 0
   ai_ckeditor: 0
   ai_content_suggestions: 0
+  ai_integration_eca: 0
   ai_logging: 0
   ai_metering: 0
   ai_provider_amazeeio: 0
@@ -23,7 +26,12 @@ module:
   csv_serialization: 0
   datetime: 0
   dblog: 0
+  drupaleasy_ai_tools: 0
   dynamic_page_cache: 0
+  eca: 0
+  eca_content: 0
+  eca_field_widget_actions: 0
+  eca_ui: 0
   editor: 0
   field: 0
   field_ui: 0
@@ -38,6 +46,8 @@ module:
   link: 0
   menu_link_content: 0
   menu_ui: 0
+  modeler: 0
+  modeler_api: 0
   mysql: 0
   navigation: 0
   navigation_extra_tools: 0

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.image_with_full_description
     - taxonomy.vocabulary.tags
   module:
     - contextual
@@ -25,11 +26,19 @@ permissions:
   - 'access files overview'
   - 'access navigation'
   - 'administer url aliases'
+  - 'create image_with_full_description content'
   - 'create terms in tags'
   - 'create url aliases'
+  - 'delete any image_with_full_description content'
+  - 'delete image_with_full_description revisions'
   - 'delete own files'
+  - 'delete own image_with_full_description content'
+  - 'edit any image_with_full_description content'
+  - 'edit own image_with_full_description content'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'revert image_with_full_description revisions'
   - 'view all revisions'
+  - 'view image_with_full_description revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

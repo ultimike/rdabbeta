@@ -1,0 +1,24 @@
+uuid: 47df97b4-919c-4a47-94e8-8931b128bb7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapter_text
+    - node.type.book_chapter
+  module:
+    - text
+_core:
+  default_config_hash: hZYnh06HqIsvdCUO0prg3d8Lu3BQDk5KSTpk2WlkAxc
+id: node.book_chapter.field_chapter_text
+field_name: field_chapter_text
+entity_type: node
+bundle: book_chapter
+label: 'Chapter text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

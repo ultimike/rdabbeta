@@ -1,0 +1,8 @@
+fill_compound_field:
+  version: 1.0.0
+  js:
+    js/fill_compound_field.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax

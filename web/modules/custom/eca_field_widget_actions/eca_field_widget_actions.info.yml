@@ -1,0 +1,8 @@
+name: 'ECA Field Widget Actions'
+type: module
+description: 'Integrate ECA with the Field Widget Actions module.'
+core_version_requirement: ^11
+package: ECA
+dependencies:
+  - eca:eca (^2 || ^3)
+  - field_widget_actions:field_widget_actions

@@ -1,0 +1,21 @@
+uuid: ad47583a-efe4-46be-943d-6630c2e10b91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_description
+    - node.type.image_with_full_description
+_core:
+  default_config_hash: P4E-j5xhFBEm0gORrRfLwAgVr6_6c7s5w7gLPp1K8Vw
+id: node.image_with_full_description.field_image_description
+field_name: field_image_description
+entity_type: node
+bundle: image_with_full_description
+label: 'Image description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

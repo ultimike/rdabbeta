@@ -1,0 +1,19 @@
+uuid: 48e462f6-6f11-424d-a4b2-1dbf52b4040f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: AYVJZ9bu2bhC5mZcM93Pa7TfFhYesBvqMYlCjdfk6gg
+name: 'Book chapter'
+type: book_chapter
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

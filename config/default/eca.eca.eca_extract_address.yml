@@ -1,0 +1,101 @@
+uuid: 67c54a05-574d-408f-aab0-8b652f890da9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_integration_eca
+    - ai_provider_amazeeio
+    - drupaleasy_ai_tools
+    - eca_content
+    - eca_field_widget_actions
+    - modeler_api
+third_party_settings:
+  modeler_api:
+    modeler_id: workflow_modeler
+    data: 'hash:0a21a691ed41cec4e4ddf3dbdd689418'
+    label: 'ECA: Extract address'
+    version: 1.0.0
+id: eca_extract_address
+weight: 0
+template: false
+events:
+  eca_field_widget_nwqp4htq:
+    plugin: 'eca_field_widget_actions:eca_field_widget'
+    label: 'Find address in body'
+    configuration: {  }
+    successors:
+      -
+        id: entity_get_field_value_ioetif9z
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  entity_get_field_value_ioetif9z:
+    label: 'Get body field text'
+    plugin: eca_get_field_value
+    configuration:
+      field_name: field_body
+      token_name: body
+      object: entity
+    successors:
+      -
+        id: chat_796tlnmv
+        condition: ''
+  chat_796tlnmv:
+    label: Chat
+    plugin: ai_integration_eca_execute_chat
+    configuration:
+      model: amazeeio__claude-5-sonnet
+      token_input: ''
+      token_result: location-from-body
+      config: ''
+      prompt: |
+        Analyze the entire text and identify ALL locations mentioned, including businesses, addresses, landmarks, neighborhoods, cities, regions, and countries.
+
+        From all locations found, select the single MOST PRECISE and SPECIFIC location. Prefer in this order:
+        1. A full street address (e.g. "123 Main St, Springfield, IL")
+        2. A named business or landmark with a city/region (e.g. "Louie's Pizzeria, Queens, New York")
+        3. A named business or landmark alone (e.g. "Eiffel Tower")
+        4. A neighborhood or district with city (e.g. "SoHo, Manhattan")
+        5. A city with state/country (e.g. "Melbourne, Florida")
+        6. A city alone
+        7. A region, state, or country
+
+        If a less precise location provides context for a more precise one, combine them into a single query (e.g. if the text mentions "Lombard Street" and "San Francisco" separately, return "Lombard Street, San Francisco").
+
+        Return ONLY the clean, searchable location query string with no additional text, labels, or explanation.
+
+        Here is the text:
+        ============
+        [body]
+        ============
+      schema: ''
+    successors:
+      -
+        id: geocode_location_via_geoapify_8xzbyyz2
+        condition: ''
+  geocode_location_via_geoapify_8xzbyyz2:
+    label: 'Geocode location via Geoapify'
+    plugin: drupaleasy_ai_tools_geoapify_geocode
+    configuration:
+      api_key:
+      input_key: '[location-from-body]'
+      output_key: geoapify_geocode
+    successors:
+      -
+        id: set_address_field_widget_value_wt2s4b8a
+        condition: ''
+  set_address_field_widget_value_wt2s4b8a:
+    label: 'Set Address field widget value'
+    plugin: drupaleasy_ai_tools_set_address_widget_value
+    configuration:
+      country_code: '[geoapify_geocode:country_code]'
+      address_line1: '[geoapify_geocode:street]'
+      address_line2: ''
+      locality: '[geoapify_geocode:city]'
+      administrative_area: '[geoapify_geocode:state_code]'
+      postal_code: '[geoapify_geocode:postcode]'
+      organization: '[geoapify_geocode:name]'
+      given_name: ''
+      family_name: ''
+    successors: {  }

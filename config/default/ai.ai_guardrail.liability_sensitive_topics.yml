@@ -14,7 +14,7 @@ guardrail_settings:
     politics
     political parties
     elections
-    race
+    race (where "race" is a categorization of humans based on shared physical or social qualities into groups generally viewed as distinct within a given society.)
     racism
     religion
     war
@@ -34,3 +34,9 @@ guardrail_settings:
     human trafficking
   invalid_topics_present_message: 'This assistant is not able to discuss that topic.'
   valid_topics_missing_message: ''
+  llm_provider: ''
+  llm_model: ''
+  llm_config:
+    max_tokens: 4096
+    temperature: 1
+    top_p: 1

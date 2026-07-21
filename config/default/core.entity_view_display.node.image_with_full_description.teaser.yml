@@ -1,0 +1,38 @@
+uuid: 745007c3-d1e0-4871-9a62-cbb61c01e857
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.image_with_full_description.field_image
+    - field.field.node.image_with_full_description.field_image_description
+    - image.style.medium
+    - node.type.image_with_full_description
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: vlaOED5GQz6bTKyWMvPJwW03ozSs4y3bIlw-aBRbaCQ
+id: node.image_with_full_description.teaser
+targetEntityType: node
+bundle: image_with_full_description
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_image_description: true
