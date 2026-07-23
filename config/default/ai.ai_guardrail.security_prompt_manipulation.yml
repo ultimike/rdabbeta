@@ -21,5 +21,6 @@ guardrail_settings:
     unrestricted mode activation
     DAN prompt
     developer mode activation
+  scan_all_user_messages: false
   invalid_topics_present_message: "This message was blocked because it appears to attempt to manipulate the AI's instructions."
   valid_topics_missing_message: ''

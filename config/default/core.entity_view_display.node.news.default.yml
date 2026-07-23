@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.news.field_address
     - field.field.node.news.field_body
+    - field.field.node.news.field_url
     - node.type.news
   module:
     - address
+    - link
     - text
     - user
 id: node.news.default
@@ -28,6 +30,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

@@ -32,6 +32,7 @@ guardrail_settings:
     drug legalisation
     extremism
     human trafficking
+  scan_all_user_messages: false
   invalid_topics_present_message: 'This assistant is not able to discuss that topic.'
   valid_topics_missing_message: ''
   llm_provider: ''

@@ -1,0 +1,65 @@
+uuid: 46cae570-349f-4aac-b55a-dcc91309cb60
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_integration_eca
+    - ai_provider_amazeeio
+    - eca_content
+    - eca_field_widget_actions
+    - modeler_api
+third_party_settings:
+  modeler_api:
+    modeler_id: workflow_modeler
+    data: 'hash:70e7e6dc9b5f134990d46019c2c060a6'
+    label: 'ECA: no more bacon'
+    version: 1.0.0
+id: eca_no_more_bacon
+weight: 0
+template: false
+events:
+  eca_field_widget_mc5dz9k3:
+    plugin: 'eca_field_widget_actions:eca_field_widget'
+    label: 'Add more cupcakes'
+    configuration: {  }
+    successors:
+      -
+        id: entity_get_field_value_wsrakfja
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  entity_get_field_value_wsrakfja:
+    label: 'Entity: get field value'
+    plugin: eca_get_field_value
+    configuration:
+      field_name: field_body
+      token_name: body-field-value
+      object: entity
+    successors:
+      -
+        id: chat_fmb5onsw
+        condition: ''
+  chat_fmb5onsw:
+    label: Chat
+    plugin: ai_integration_eca_execute_chat
+    configuration:
+      model: amazeeio__claude-5-sonnet
+      token_input: body-field-value
+      token_result: updated-body-field-value
+      config: ''
+      prompt: |-
+        Replace all occurrences of the word "bacon" with "cupcake" in the body field below. Be sure to handle plural words properly.
+
+        Body: [body-field-value]
+      schema: ''
+    successors:
+      -
+        id: set_field_widget_value_avzuei7c
+        condition: ''
+  set_field_widget_value_avzuei7c:
+    label: 'Set field widget value'
+    plugin: eca_set_field_widget_value
+    configuration:
+      widget_value: '[updated-body-field-value]'
+    successors: {  }

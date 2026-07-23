@@ -1,0 +1,13 @@
+uuid: d4d2765a-9c5d-4467-9251-9dba7fa7a413
+langcode: en
+status: true
+dependencies:
+  module:
+    - metatag_ai
+_core:
+  default_config_hash: 2rNF5zCYlRhHo9m1-DUhqw2_yGIbyZDDxThDlViEWyE
+id: generate_metatag_action
+label: 'Generate metatag'
+type: node
+plugin: generate_metatag_action
+configuration: {  }

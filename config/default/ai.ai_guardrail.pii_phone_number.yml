@@ -10,4 +10,5 @@ description: 'Detects international and US phone numbers in text. Covers formats
 guardrail: regexp_guardrail
 guardrail_settings:
   regexp_pattern: '/(?<!\w)(?:(?:\+|0|00)[1-9][0-9\s().-]{6,20}\d|\(?[2-9]\d{2}\)?[-.\s]?[2-9]\d{2}[-.\s]?\d{4})(?!\w)/'
+  scan_all_user_messages: false
   violation_message: 'This message was blocked because it contains a phone number.'

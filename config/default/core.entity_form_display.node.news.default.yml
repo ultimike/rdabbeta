@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.news.field_address
     - field.field.node.news.field_body
+    - field.field.node.news.field_url
     - node.type.news
   module:
     - address
     - field_widget_actions
+    - link
     - path
     - text
 id: node.news.default
@@ -47,7 +49,33 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_widget_actions:
+        3154a513-2c5e-4e30-b8ab-7bd5d19277df:
+          plugin_id: 'eca_field_widget:eca_no_more_bacon.eca_field_widget_mc5dz9k3'
+          enabled: true
+          automatic: false
+          button_label: 'Add more cupcakes'
+          multiple: true
+          weight: 0
+          direct_fill: '1'
+  field_url:
+    type: link_default
+    weight: 122
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      field_widget_actions:
+        325ef12a-fcdf-4c62-87d2-a42a3a66c740:
+          plugin_id: 'eca_field_widget:eca_extract_url.eca_field_widget_vq9zl6rw'
+          enabled: true
+          automatic: false
+          button_label: 'Get URL'
+          multiple: true
+          weight: 0
+          direct_fill: '1'
   path:
     type: path
     weight: 30

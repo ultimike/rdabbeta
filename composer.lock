@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b38fb6d010df69510468c95bcfe91f8",
+    "content-hash": "0f216c93298ad2b6d95911ae562d392a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1290,17 +1290,17 @@
         },
         {
             "name": "drupal/ai",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "1.4.4"
+                "reference": "1.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai-1.4.4.zip",
-                "reference": "1.4.4",
-                "shasum": "cb2188358266caa6365258cf61f316b019bb4c6a"
+                "url": "https://ftp.drupal.org/files/projects/ai-1.4.5.zip",
+                "reference": "1.4.5",
+                "shasum": "010157539fa0e91ad69a2fb05bf454d75336e950"
             },
             "require": {
                 "drupal/core": "^10.5 || ^11.2",
@@ -1330,8 +1330,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.4.4",
-                    "datestamp": "1783520097",
+                    "version": "1.4.5",
+                    "datestamp": "1784730304",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1895,6 +1895,79 @@
             "homepage": "https://www.drupal.org/project/ai_provider_anthropic",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_provider_anthropic"
+            }
+        },
+        {
+            "name": "drupal/ai_provider_ollama",
+            "version": "1.2.0-rc3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_provider_ollama.git",
+                "reference": "1.2.0-rc3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_provider_ollama-1.2.0-rc3.zip",
+                "reference": "1.2.0-rc3",
+                "shasum": "1ddd1580fbd6523a816233a961a729617ae5fc5d"
+            },
+            "require": {
+                "drupal/ai": "^1.2.0",
+                "drupal/core": "^10.2 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.0-rc3",
+                    "datestamp": "1775638436",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "kevinquillen",
+                    "homepage": "https://www.drupal.org/user/317279"
+                },
+                {
+                    "name": "marcus_johansson",
+                    "homepage": "https://www.drupal.org/user/385947"
+                },
+                {
+                    "name": "scott_euser",
+                    "homepage": "https://www.drupal.org/user/3267594"
+                },
+                {
+                    "name": "seogow",
+                    "homepage": "https://www.drupal.org/user/3065779"
+                },
+                {
+                    "name": "valthebald",
+                    "homepage": "https://www.drupal.org/user/239562"
+                },
+                {
+                    "name": "wouters_f",
+                    "homepage": "https://www.drupal.org/user/721548"
+                },
+                {
+                    "name": "yautja_cetanu",
+                    "homepage": "https://www.drupal.org/user/626050"
+                }
+            ],
+            "description": "Ollama provider implementation for the AI module for Drupal",
+            "homepage": "https://www.drupal.org/project/ai_provider_ollama",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_provider_ollama"
             }
         },
         {
@@ -2688,6 +2761,150 @@
             }
         },
         {
+            "name": "drupal/metatag",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/metatag.git",
+                "reference": "2.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "b6ae4b665a49771d5139644c71cb3d5a68cb4828"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "drupal/token": "^1.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "drupal/forum": "1.x-dev",
+                "drupal/hal": "^1 || ^2 || ^9",
+                "drupal/metatag_dc": "*",
+                "drupal/metatag_open_graph": "*",
+                "drupal/page_manager": "^4.0",
+                "drupal/redirect": "^1.0",
+                "ergebnis/composer-normalize": "*",
+                "mpyw/phpunit-patch-serializable-comparison": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.0",
+                    "datestamp": "1758622371",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "composer-normalize": {
+                    "indent-size": 2,
+                    "indent-style": "space"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/640498/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "dave reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                }
+            ],
+            "description": "Manage meta tags for all entities.",
+            "homepage": "https://www.drupal.org/project/metatag",
+            "keywords": [
+                "Drupal",
+                "seo"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/metatag",
+                "issues": "https://www.drupal.org/project/issues/metatag",
+                "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
+            "name": "drupal/metatag_ai",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/metatag_ai.git",
+                "reference": "2.0.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/metatag_ai-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "562a6d184f3f99de071353ac2d84d3410a608679"
+            },
+            "require": {
+                "drupal/ai": "^1.3@beta",
+                "drupal/core": "^9 || ^10 || ^11",
+                "drupal/metatag": "^2 || ^1.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.5",
+                    "datestamp": "1768986160",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Rachel Jaro (nx2611)",
+                    "homepage": "https://www.drupal.org/u/nx2611",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "johnlutz",
+                    "homepage": "https://www.drupal.org/user/162123"
+                },
+                {
+                    "name": "luukyb",
+                    "homepage": "https://www.drupal.org/user/692278"
+                },
+                {
+                    "name": "nx2611",
+                    "homepage": "https://www.drupal.org/user/3737049"
+                },
+                {
+                    "name": "Promet Source",
+                    "homepage": "https://www.drupal.org/user/922144"
+                },
+                {
+                    "name": "prometsource",
+                    "homepage": "https://www.drupal.org/user/3528162"
+                }
+            ],
+            "description": "Metatag AI Generator.",
+            "homepage": "https://www.drupal.org/project/metatag_ai",
+            "keywords": [
+                "Drupal",
+                "metatag",
+                "seo"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/metatag_ai",
+                "issues": "https://www.drupal.org/project/issues/metatag_ai"
+            }
+        },
+        {
             "name": "drupal/modeler",
             "version": "1.0.4",
             "source": {
@@ -2994,6 +3211,122 @@
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
+            }
+        },
+        {
+            "name": "drupal/tool",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tool.git",
+                "reference": "1.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tool-1.0.0-beta2.zip",
+                "reference": "1.0.0-beta2",
+                "shasum": "ca18f65ac43ca6fdd88a11bf1e9e0bd246b82774"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "drupal/ai": "^1.2",
+                "drupal/ai_agents": "^1.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta2",
+                    "datestamp": "1780628298",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "jurgenhaas",
+                    "homepage": "https://www.drupal.org/user/168924"
+                },
+                {
+                    "name": "marcus_johansson",
+                    "homepage": "https://www.drupal.org/user/385947"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                },
+                {
+                    "name": "yautja_cetanu",
+                    "homepage": "https://www.drupal.org/user/626050"
+                }
+            ],
+            "description": "Provides a tool plugin for creating well defined actions.",
+            "homepage": "https://www.drupal.org/project/tool",
+            "support": {
+                "source": "https://drupal.org/project/tool",
+                "issues": "https://drupal.org/project/issues/tool"
+            }
+        },
+        {
+            "name": "drupal/tool_belt",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tool_belt.git",
+                "reference": "1.0.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tool_belt-1.0.0-alpha2.zip",
+                "reference": "1.0.0-alpha2",
+                "shasum": "d2507433da19750278db64300f709d7ad0cf0bf3"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11 || ^12",
+                "drupal/tool": "^1.0@beta"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha2",
+                    "datestamp": "1783434144",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ajits",
+                    "homepage": "https://www.drupal.org/user/981944"
+                },
+                {
+                    "name": "b_sharpe",
+                    "homepage": "https://www.drupal.org/user/2512258"
+                },
+                {
+                    "name": "michaellander",
+                    "homepage": "https://www.drupal.org/user/636494"
+                }
+            ],
+            "description": "A default collection of tools covering common Drupal core actions.",
+            "homepage": "https://www.drupal.org/project/tool_belt",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tool_belt",
+                "issues": "https://www.drupal.org/project/issues/tool_belt"
             }
         },
         {
@@ -8870,7 +9203,10 @@
     "stability-flags": {
         "drupal/ai_integration_eca": 5,
         "drupal/ai_logging-ai_logging": 15,
-        "drupal/ai_metering": 10
+        "drupal/ai_metering": 10,
+        "drupal/ai_provider_ollama": 5,
+        "drupal/tool": 10,
+        "drupal/tool_belt": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

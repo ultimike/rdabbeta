@@ -18,5 +18,6 @@ guardrail_settings:
     regulatory compliance advice
     criminal defence advice
     legal liability assessment
+  scan_all_user_messages: false
   invalid_topics_present_message: 'This assistant cannot provide legal advice. Please consult a qualified legal professional.'
   valid_topics_missing_message: ''

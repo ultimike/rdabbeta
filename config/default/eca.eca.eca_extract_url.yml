@@ -1,0 +1,106 @@
+uuid: 571c38a4-b0c8-4b6e-9889-5847df89da16
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_integration_eca
+    - ai_provider_amazeeio
+    - drupaleasy_ai_tools
+    - eca_content
+    - eca_field_widget_actions
+    - eca_render
+    - modeler_api
+    - serialization
+third_party_settings:
+  modeler_api:
+    modeler_id: workflow_modeler
+    data: 'hash:4b0424f277076cc03530300cac379e54'
+    label: 'ECA: Extract URL'
+    version: 1.0.0
+id: eca_extract_url
+weight: 0
+template: false
+events:
+  eca_field_widget_vq9zl6rw:
+    plugin: 'eca_field_widget_actions:eca_field_widget'
+    label: 'Get URL'
+    configuration: {  }
+    successors:
+      -
+        id: entity_get_field_value_vqevoby2
+        condition: ''
+conditions: {  }
+gateways: {  }
+actions:
+  entity_get_field_value_vqevoby2:
+    label: 'Entity: get field value'
+    plugin: eca_get_field_value
+    configuration:
+      field_name: field_body
+      token_name: field-body-value
+      object: entity
+    successors:
+      -
+        id: chat_39j7qzw4
+        condition: ''
+  chat_39j7qzw4:
+    label: Chat
+    plugin: ai_integration_eca_execute_chat
+    configuration:
+      model: amazeeio__claude-4-8-opus
+      token_input: ''
+      token_result: url
+      config: ''
+      prompt: |-
+        Search the following text and find the first hyperlink. Return the title (anchor text) and URL of that link as a JSON array. If no link is found, return an empty array. Respond only with the JSON — no additional text or explanation. Return only valid JSON. Do not wrap the response in code fences or add any other text.
+                Here is the text:
+                ============
+                [field-body-value]
+                ============
+      schema: |2-
+                {
+                  "$schema": "http://json-schema.org/draft-07/schema#",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "description": "The anchor text or title of the link"
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The URL of the link"
+                      }
+                    },
+                    "required": ["title", "url"]
+                  },
+                  "maxItems": 1
+                }
+    successors:
+      -
+        id: render_unserialize_7ecb3yg8
+        condition: ''
+  set_link_field_widget_value_u8n4zcct:
+    label: 'Set Link field widget value'
+    plugin: drupaleasy_ai_tools_set_link_widget_value
+    configuration:
+      uri: '[url.uri]'
+      title: '[url.title]'
+    successors: {  }
+  render_unserialize_7ecb3yg8:
+    label: 'Render: unserialize'
+    plugin: 'eca_render_unserialize:serialization'
+    configuration:
+      name: ''
+      token_name: link-parts
+      weight: null
+      mode: append
+      value: '[url]'
+      format: json
+      type: array
+    successors:
+      -
+        id: set_link_field_widget_value_u8n4zcct
+        condition: ''

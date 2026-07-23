@@ -10,4 +10,5 @@ description: 'Detects attempts to inject <script> tags into prompts. Relevant wh
 guardrail: regexp_guardrail
 guardrail_settings:
   regexp_pattern: '/<\s*script[\s>]/i'
+  scan_all_user_messages: false
   violation_message: 'This message was blocked because it contains potentially malicious content.'

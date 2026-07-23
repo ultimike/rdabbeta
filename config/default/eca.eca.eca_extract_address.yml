@@ -78,7 +78,7 @@ actions:
     label: 'Geocode location via Geoapify'
     plugin: drupaleasy_ai_tools_geoapify_geocode
     configuration:
-      api_key:
+      api_key: 6a4a1fc38fec437bb700143517927f31
       input_key: '[location-from-body]'
       output_key: geoapify_geocode
     successors:

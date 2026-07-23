@@ -10,4 +10,5 @@ description: 'Detects CSS expression() syntax and url(javascript:...) patterns u
 guardrail: regexp_guardrail
 guardrail_settings:
   regexp_pattern: '/(expression\s*\(|url\s*\(\s*[''"]?\s*javascript)/i'
+  scan_all_user_messages: false
   violation_message: 'This message was blocked because it contains potentially malicious content.'

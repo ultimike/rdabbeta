@@ -9,4 +9,7 @@ node_modules/
 recipes
 config/default/key.key.anthropic.yml
 config/default/key.key.openai.yml
+config/default/key.key.amazeeio_ai.yml
+config/default/key.key.amazeeio_database.yml
+config/default/key.key.amazeeio_management.yml
 config/default/eca.eca.eca_extract_address.yml
