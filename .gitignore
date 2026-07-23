@@ -12,4 +12,5 @@ config/default/key.key.openai.yml
 config/default/key.key.amazeeio_ai.yml
 config/default/key.key.amazeeio_ai_database.yml
 config/default/key.key.amazeeio_ai_management_token.yml
+config/default/ai_provider_amazeeio.settings.yml
 config/default/eca.eca.eca_extract_address.yml
