@@ -55,7 +55,7 @@ content:
           plugin_id: 'eca_field_widget:eca_no_more_bacon.eca_field_widget_mc5dz9k3'
           enabled: true
           automatic: false
-          button_label: 'Add more cupcakes'
+          button_label: 'Change words'
           multiple: true
           weight: 0
           direct_fill: '1'

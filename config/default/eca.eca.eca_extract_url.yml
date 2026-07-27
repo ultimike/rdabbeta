@@ -14,7 +14,7 @@ dependencies:
 third_party_settings:
   modeler_api:
     modeler_id: workflow_modeler
-    data: 'hash:4b0424f277076cc03530300cac379e54'
+    data: 'hash:f27312a67a9dbb549a2e5afa0274f9b3'
     label: 'ECA: Extract URL'
     version: 1.0.0
 id: eca_extract_url
@@ -48,7 +48,7 @@ actions:
     plugin: ai_integration_eca_execute_chat
     configuration:
       model: amazeeio__claude-4-8-opus
-      token_input: ''
+      token_input: field-body-value
       token_result: url
       config: ''
       prompt: |-
@@ -57,27 +57,25 @@ actions:
                 ============
                 [field-body-value]
                 ============
-      schema: |2-
-                {
-                  "$schema": "http://json-schema.org/draft-07/schema#",
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "title": {
-                        "type": "string",
-                        "description": "The anchor text or title of the link"
-                      },
-                      "url": {
-                        "type": "string",
-                        "format": "uri",
-                        "description": "The URL of the link"
-                      }
-                    },
-                    "required": ["title", "url"]
-                  },
-                  "maxItems": 1
-                }
+      schema: |-
+        {
+          "type": "object",
+          "properties": {
+            "links": {
+              "type": "array",
+              "maxItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string", "description": "The anchor text or title of the link" },
+                  "url": { "type": "string", "format": "uri", "description": "The URL of the link" }
+                },
+                "required": ["title", "url"]
+              }
+            }
+          },
+          "required": ["links"]
+        }
     successors:
       -
         id: render_unserialize_7ecb3yg8

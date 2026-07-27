@@ -8,6 +8,7 @@ dependencies:
     - ai_metering
     - file
     - filter
+    - media
     - system
 _core:
   default_config_hash: wkW7P5A53YhGmsgamrmTbfwpZrqdnPYiJdoAZQtdmJg
@@ -20,3 +21,4 @@ permissions:
   - 'delete own files'
   - 'use ai_metering'
   - 'use text format basic_html'
+  - 'view media'

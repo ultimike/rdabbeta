@@ -11,8 +11,8 @@ dependencies:
 third_party_settings:
   modeler_api:
     modeler_id: workflow_modeler
-    data: 'hash:70e7e6dc9b5f134990d46019c2c060a6'
-    label: 'ECA: no more bacon'
+    data: 'hash:ab3a474648ef470861dc485ec6a4fcbf'
+    label: 'ECA: Word changer'
     version: 1.0.0
 id: eca_no_more_bacon
 weight: 0
@@ -20,7 +20,7 @@ template: false
 events:
   eca_field_widget_mc5dz9k3:
     plugin: 'eca_field_widget_actions:eca_field_widget'
-    label: 'Add more cupcakes'
+    label: 'Change words'
     configuration: {  }
     successors:
       -
@@ -30,11 +30,11 @@ conditions: {  }
 gateways: {  }
 actions:
   entity_get_field_value_wsrakfja:
-    label: 'Entity: get field value'
+    label: 'Entity: get body field text'
     plugin: eca_get_field_value
     configuration:
       field_name: field_body
-      token_name: body-field-value
+      token_name: body
       object: entity
     successors:
       -
@@ -45,13 +45,13 @@ actions:
     plugin: ai_integration_eca_execute_chat
     configuration:
       model: amazeeio__claude-5-sonnet
-      token_input: body-field-value
-      token_result: updated-body-field-value
+      token_input: body
+      token_result: updated-body
       config: ''
       prompt: |-
-        Replace all occurrences of the word "bacon" with "cupcake" in the body field below. Be sure to handle plural words properly.
-
-        Body: [body-field-value]
+        Replace all occurrences of the word "bacon" with "cupcake" in the body field below. Be sure to handle plural words properly. Return ONLY the clean updated body text with no additional text, labels, or explanation.=================
+        Body: [body]
+        =================
       schema: ''
     successors:
       -
@@ -61,5 +61,5 @@ actions:
     label: 'Set field widget value'
     plugin: eca_set_field_widget_value
     configuration:
-      widget_value: '[updated-body-field-value]'
+      widget_value: '[updated-body]'
     successors: {  }

@@ -1,0 +1,61 @@
+uuid: eff26421-3e9d-4288-a4ca-c8aed2f7f449
+langcode: en
+status: true
+dependencies: {  }
+id: find_image_field_on_node_or_media_entities
+label: 'Find image field on node or media entities'
+description: 'This is capable of finding image fields on content types or media entities. '
+system_prompt: |-
+  You are an expert Drupal AI agent that can find image fields associated with content types and media entities on this system.
+
+  You are a looping agent and have some tools available to answer this question, so please use them.&#x20;
+
+  Detailed instructions:
+
+  1\. Always use the Get Entity Field Information tool to determine the type of fields on each content type and media entity returned from the List Bundles tool.
+
+  Important: Never return any information about any field types other than image fields.
+
+  If the question is not about image fields on nodes or media items, then answer, "I am not the right agent for the task."
+secured_system_prompt: '[ai_agent:agent_instructions]'
+tools:
+  'ai_agent:get_entity_field_information': true
+tool_settings:
+  'ai_agent:get_entity_field_information':
+    return_directly: 0
+    require_usage: 1
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+orchestration_agent: false
+triage_agent: false
+max_loops: 3
+max_loops_message: ''
+default_information_tools: |-
+  get_content_bundles:
+    label: 'List of content bundles'
+    description: 'This is a list of all content types (bundles)'
+    tool: 'ai_agent:list_bundles'
+    parameters:
+      entity_type: node
+  get_media_bundles:
+    label: 'List of media bundles'
+    description: 'This is a list of all media types (bundles)'
+    tool: 'ai_agent:list_bundles'
+    parameters:
+      entity_type: media
+tool_usage_limits:
+  'ai_agent:get_entity_field_information':
+    entity_type:
+      action: only_allow
+      values:
+        - node
+        - media
+      hide_property: 0
+      not_break: 0
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''
