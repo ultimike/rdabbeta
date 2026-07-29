@@ -1,20 +1,20 @@
-uuid: 0606f673-7714-4e3f-ae59-e701b50b6f1a
+uuid: 227f2f8d-439e-420f-91ca-39d2c09e0b57
 langcode: en
 status: true
 dependencies:
   module:
     - file
-id: image_descriptions_swarm_orchestration_agent
-label: 'TEST Image descriptions (swarm orchestration agent) '
-description: "You are an AI swarm orchestration agent that knows how to find and describe images associated with nodes and media items and then save image descriptions back to the proper fields on Drupal nodes and media items that contain the images.\r\n"
+id: image_descriptions_swarm_orchestration_agent_2
+label: 'Image descriptions (swarm orchestration agent)'
+description: 'You are an AI swarm orchestration agent that knows how to find and describe images associated with nodes and media items and then save image descriptions back to the proper fields on Drupal nodes and media items that contain the images.'
 system_prompt: |-
   You are an AI swarm orchestration agent that knows how to find and describe images associated with nodes and media items. You also know how to save image descriptions back to the proper fields on the same entity that includes the image.
 
-  When asked to find image fields, find images, describe images, or save image descriptions, use the tools provided. 
+  When asked to find image fields, find images, describe images, or save image descriptions, use the tools provided.&#x20;
 
   \* Use the "Find image fields on node or media entities" agent to determine which bundles include an image field.
 
-  \* Use the "Find text field based on its label" agent to find the proper field to save image description in when asked about image or photo descriptions. This does not mean the image's "alt text" data. It is up to you to look at field names and determine if there is a field that likely contains descriptions of images.
+  \* Use the "Find text field based on its label" agent to find the proper field to save an image description in when asked about image or photo descriptions. This does not mean the image's "alt text" data. It is up to you to look at field names and determine if there is a field that likely contains descriptions of images.
 
   \* Use the "Get Current Content Entity Values" tool to determine if image or image description fields are populated. Determine if the image field is populated before checking if the image description field is populated. If there is no image, then there's no need to check the image description field.
 
@@ -25,11 +25,13 @@ system_prompt: |-
   \* Use the "Update node or media item field value" agent to save the image description back to the requested field.
 
   \* Do not describe any images unless asked to.
+
+  In order to decrease the chance of hitting AI API rate limits, if asked to describe images, only operate on a maximum of 1 image and then end your execution. If there are more images to describe then respond with, "I'm only allowed to operate on 1 image at a time in order to avoid hitting any AI API rate limits."
 secured_system_prompt: '[ai_agent:agent_instructions]'
 tools:
   'ai_agents::ai_agent::update_node_or_media_item_field_value': true
-  'ai_agents::ai_agent::find_text_fields_with_a_specific_label': true
   'ai_agents::ai_agent::find_image_field_on_node_or_media_entities': true
+  'ai_agents::ai_agent::find_text_fields_with_a_specific_label': true
   'ai_agent:vision': true
   'ai_agent:get_current_content_entity_values': true
   'ai_agent:list_content_entities': true
@@ -40,13 +42,13 @@ tool_settings:
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-  'ai_agents::ai_agent::find_text_fields_with_a_specific_label':
+  'ai_agents::ai_agent::find_image_field_on_node_or_media_entities':
     return_directly: 0
     require_usage: 0
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-  'ai_agents::ai_agent::find_image_field_on_node_or_media_entities':
+  'ai_agents::ai_agent::find_text_fields_with_a_specific_label':
     return_directly: 0
     require_usage: 0
     description_override: ''
@@ -70,15 +72,15 @@ tool_settings:
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-orchestration_agent: false
+orchestration_agent: true
 triage_agent: false
 max_loops: 12
 max_loops_message: ''
 default_information_tools: ''
 tool_usage_limits:
   'ai_agents::ai_agent::update_node_or_media_item_field_value': {  }
-  'ai_agents::ai_agent::find_text_fields_with_a_specific_label': {  }
   'ai_agents::ai_agent::find_image_field_on_node_or_media_entities': {  }
+  'ai_agents::ai_agent::find_text_fields_with_a_specific_label': {  }
   'ai_agent:vision': {  }
   'ai_agent:get_current_content_entity_values':
     entity_type:

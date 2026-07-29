@@ -1,0 +1,49 @@
+uuid: 40ac919d-7aaf-4abf-942f-783c5610e365
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_chatbot
+    - user
+  theme:
+    - claro
+id: claro_aideepchatchatbot
+theme: claro
+region: content
+weight: 0
+provider: null
+plugin: ai_deepchat_block
+settings:
+  id: ai_deepchat_block
+  label: 'Image field assistant'
+  label_display: visible
+  provider: ai_chatbot
+  ai_assistant: image_field_assistant
+  bot_name: 'Image field assistant'
+  bot_image: /modules/contrib/ai/modules/ai_chatbot/assets/ai-icon-gradient.svg
+  use_username: 0
+  default_username: ''
+  use_avatar: 0
+  default_avatar: ''
+  first_message: 'How can I help you with image fields and descriptions?'
+  loading_message: ''
+  stream: null
+  toggle_state: remember
+  width: 500px
+  height: 500px
+  placement: bottom-right
+  show_structured_results: false
+  show_copy_icon: true
+  collapse_minimal: false
+  style_file: 'module:ai_chatbot:toolbar.yml'
+  verbose_mode: true
+  expansion_method: expand
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      content_editor: content_editor
+      administrator: administrator

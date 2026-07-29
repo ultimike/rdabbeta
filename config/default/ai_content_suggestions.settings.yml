@@ -1,6 +1,6 @@
 _core:
   default_config_hash: CYOloPJbEEjUrGmBRPLeb9aapaYjKMfx79MnS91k3Us
-field_widget_prompt: "You will be asked to help with content suggestions based on the input in markdown format. Answer with\r\nsuggestions only, do not repeat the task description, do not use any other text except for the suggestions.\r\nDo not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation:\r\n```\r\n[\r\n  {\"suggestion\": \"First suggested text\"},\r\n  {\"suggestion\": \"Second suggested text\"},\r\n]\r\n```\r\nIf you are enable to generate a response, respond with \"Insufficient information provided, please add more data before generating suggestions.\"\r\n"
+field_widget_prompt: "You will be asked to help with content suggestions based on the input in markdown format. Answer with\r\nsuggestions only, do not repeat the task description, do not use any other text except for the suggestions.\r\nDo not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation:\r\n```\r\n[\r\n  {\"suggestion\": \"First suggested text\"},\r\n  {\"suggestion\": \"Second suggested text\"},\r\n]\r\n```\r\nIf you are unable to generate a response, respond with \"Insufficient information provided, please add more data before generating suggestions.\"\r\n"
 plugins:
   moderate:
     enabled: false
@@ -26,7 +26,7 @@ plugins:
     enabled: true
     model: amazeeio__claude-4-5-haiku
     prompt: 'Change the tone of the following text to be {{ tone }} using the same language as the following text:'
-    taxonomy: ''
+    taxonomy: tags
     taxonomy_enabled: false
 entity_types:
   node:

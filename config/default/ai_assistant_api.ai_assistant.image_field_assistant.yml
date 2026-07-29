@@ -1,0 +1,36 @@
+uuid: 28e86b93-3642-46f6-b400-079951567624
+langcode: en
+status: true
+dependencies: {  }
+id: image_field_assistant
+label: 'Image field assistant'
+description: 'An assistant that can help with image fields and image descriptions.'
+system_prompt: ''
+pre_action_prompt: ''
+instructions: |-
+  If the user asks about anything other than image fields or image descriptions, tell them, "This is not the agent you're looking for."
+
+  Keep all of your responses short - less than 10 words.
+allow_history: session
+history_context_length: '2'
+error_message: 'I am sorry, something went terribly wrong. Please try to ask me again.'
+specific_error_messages:
+  AiBadRequestException: ''
+  AiRateLimitException: ''
+  AiQuotaException: ''
+  AiSetupFailureException: ''
+  AiRequestErrorException: ''
+llm_provider: anthropic
+llm_model: claude-sonnet-4-6
+llm_configuration:
+  max_tokens: 4096
+  temperature: 1.0
+  top_k: 0.0
+actions_enabled: {  }
+roles:
+  content_editor: content_editor
+  administrator: administrator
+  anonymous: 0
+  authenticated: 0
+use_function_calling: false
+ai_agent: image_field_assistant

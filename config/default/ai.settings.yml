@@ -19,8 +19,8 @@ default_providers:
     provider_id: anthropic
     model_id: claude-sonnet-5
   embeddings:
-    provider_id: amazeeio
-    model_id: embeddings
+    provider_id: openai
+    model_id: text-embedding-3-large
   moderation:
     provider_id: openai
     model_id: omni-moderation-latest

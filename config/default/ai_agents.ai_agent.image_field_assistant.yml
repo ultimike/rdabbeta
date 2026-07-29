@@ -1,0 +1,27 @@
+uuid: ab3f1efb-c072-4edf-8cd8-18866b5ebd19
+langcode: en
+status: true
+dependencies: {  }
+id: image_field_assistant
+label: 'Image field assistant'
+description: 'An assistant that can help with image fields and image descriptions.'
+system_prompt: |-
+  If the user asks about anything other than image fields or image descriptions, tell them, "This is not the agent you're looking for."
+
+  Keep all of your responses short - less than 10 words.
+secured_system_prompt: null
+tools:
+  'ai_agents::ai_agent::image_descriptions_swarm_orchestration_agent_2': true
+tool_settings: {  }
+orchestration_agent: true
+triage_agent: false
+max_loops: 3
+max_loops_message: null
+default_information_tools: null
+tool_usage_limits: {  }
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: null
+structured_output_schema: null
+hostname_filter_disabled: null
+guardrail_set: null
