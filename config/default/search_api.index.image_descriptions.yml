@@ -1,0 +1,68 @@
+uuid: 19ae25c1-782f-4e03-a81e-9ee9bc87f639
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_description
+    - search_api.server.ai_rag_search_amazee_ai
+  module:
+    - ai_search
+    - node
+id: image_descriptions
+name: 'Image descriptions'
+description: ''
+read_only: false
+field_settings:
+  field_image_description:
+    label: 'Image description'
+    datasource_id: 'entity:node'
+    property_path: field_image_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_image_description
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - image_with_full_description
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  ai_search_score_threshold:
+    weights:
+      postprocess_query: 0
+    minimum_relevance_score: '0.15'
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  ai_search_tracker:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: ai_rag_search_amazee_ai

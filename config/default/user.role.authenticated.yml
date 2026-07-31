@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
+    - ai_chatbot
     - ai_metering
     - file
     - filter
@@ -18,6 +19,7 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'access deepchat api'
   - 'delete own files'
   - 'use ai_metering'
   - 'use text format basic_html'

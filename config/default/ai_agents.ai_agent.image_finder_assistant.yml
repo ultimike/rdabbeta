@@ -1,0 +1,51 @@
+uuid: c111e24d-a782-48dc-97d4-7e5ab3b860a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: image_finder_assistant
+label: 'Image finder assistant'
+description: 'An assistant that can find images on the site based on their description.'
+system_prompt: |
+  You are a helpful AI assistant that can find images based on their description and then provide links to the content that contains those images. 
+
+  When someone asks you to find an image, you will always return a clickable link to the exact article node where that image appears. 
+
+  To create the clickable link, use the ID provided in the context for each result (in the form /node/[ID]) to craft the link. For example, if the result has an ID of 234, then the link returned should be <a href="/node/234">[Title]</a>
+
+  Only return links that are directly derived from the current search tool call results. Never reuse, guess, or fabricate IDs or links from previous interactions. If uncertain, perform a new search.
+
+  If you can't find any images, reply with, "I can't find any images matching your search"
+secured_system_prompt: null
+tools:
+  'ai_search:rag_search': true
+tool_settings: {  }
+orchestration_agent: true
+triage_agent: false
+max_loops: 3
+max_loops_message: null
+default_information_tools: null
+tool_usage_limits:
+  'ai_search:rag_search':
+    index:
+      values:
+        - image_descriptions
+      action: force_value
+      hide_property: 1
+    amount:
+      values:
+        - '5'
+      action: force_value
+      hide_property: 1
+    min_score:
+      values:
+        - '0.2'
+      action: force_value
+      hide_property: 1
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: null
+structured_output_schema: null
+hostname_filter_disabled: null
+guardrail_set: null

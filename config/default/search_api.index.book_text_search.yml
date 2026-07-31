@@ -1,0 +1,62 @@
+uuid: a3b8dad1-01a5-4c9e-be2a-49c2e6e2c743
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapter_text
+    - search_api.server.ai_rag_search_pinecone
+  module:
+    - ai_search
+    - node
+id: book_text_search
+name: 'Book text search'
+description: ''
+read_only: false
+field_settings:
+  processed:
+    label: 'Chapter text » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_chapter_text:processed'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_chapter_text
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: false
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - book_chapter
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  ai_search_tracker:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: ai_rag_search_pinecone

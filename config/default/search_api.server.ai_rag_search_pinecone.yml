@@ -1,0 +1,32 @@
+uuid: 33934daa-f874-4f37-8456-4a3549e43f7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_vdb_provider_pinecone.settings
+  module:
+    - ai_search
+    - ai_vdb_provider_pinecone
+id: ai_rag_search_pinecone
+name: 'AI RAG search (Pinecone)'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: ollama__llama3_1_8b
+  database: pinecone
+  database_settings:
+    database_name: rdabbeta
+    collection: rdabbeta
+    metric: cosine_similarity
+  embeddings_engine: amazeeio__embeddings
+  embeddings_engine_configuration:
+    set_dimensions: false
+    dimensions: 1024
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '650'
+    chunk_min_overlap: '175'
+    contextual_content_max_percentage: '30'
+    skip_moderation: true
+  embedding_strategy_details: ''
+  include_raw_embedding_vector: false

@@ -5,8 +5,7 @@ moderations:
     provider: amazeeio
     tags: ''
     model_title: ''
-    models:
-      - openai__omni-moderation-latest
+    models: {  }
   -
     provider: anthropic
     tags: ''

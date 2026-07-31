@@ -1,0 +1,32 @@
+uuid: 6cbe13ee-10c4-4372-a788-bb2813c0f8f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_provider_amazeeio.settings
+  module:
+    - ai_provider_amazeeio
+    - ai_search
+id: ai_rag_search_amazee_ai
+name: 'AI RAG search (amazee.ai)'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: amazeeio__claude-4-6-sonnet
+  database: amazeeio_vector_db
+  database_settings:
+    database_name: db_9ea7608b
+    collection: amazee_ai
+    metric: cosine_similarity
+  embeddings_engine: amazeeio__embeddings
+  embeddings_engine_configuration:
+    set_dimensions: false
+    dimensions: 1024
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '250'
+    chunk_min_overlap: '50'
+    contextual_content_max_percentage: '20'
+    skip_moderation: false
+  embedding_strategy_details: ''
+  include_raw_embedding_vector: false
