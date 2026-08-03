@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: x6RSyMWd1iQYhYS3zBLWYbRgqKfghEjz5rbA025_uJo
+agents:
+  -
+    id: image_descriptions_swarm_orchestration_agent_2
+    always_include: {  }
+    never_include: {  }
+    loop_aware: false
+    scope_subscriptions:
+      use_case:
+        - working_with_text

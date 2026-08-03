@@ -1,0 +1,56 @@
+uuid: 5db4500b-1857-4fa7-af52-69dd2525ae99
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: book_text_search_assistant
+label: 'Book text search assistant'
+description: |
+  An assistant that can find text within select books.
+system_prompt: |-
+  You are a helpful AI assistant that can find text within select books based on the user query and then provide links to the content that contains relevant book text content.
+
+  When someone asks you about book text content, you will always return a clickable link to the exact node where the related content appears based on the URI provided in the contextual content.
+
+  Only return links that are directly derived from the current search tool call results. Never reuse, guess, or fabricate URIs or links from previous interactions. If uncertain, perform a new search.
+
+  If you can't find any relevant content, reply with, "I can't find any relevant content"
+secured_system_prompt: '[ai_agent:agent_instructions]'
+tools:
+  'ai_search:rag_search': true
+tool_settings:
+  'ai_search:rag_search':
+    return_directly: 0
+    require_usage: 0
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+orchestration_agent: true
+triage_agent: false
+max_loops: 6
+max_loops_message: ''
+default_information_tools: ''
+tool_usage_limits:
+  'ai_search:rag_search':
+    index:
+      values:
+        - book_text_search
+      action: force_value
+      hide_property: 1
+    amount:
+      values:
+        - '5'
+      action: force_value
+      hide_property: 1
+    min_score:
+      values:
+        - '0.1'
+      action: force_value
+      hide_property: 1
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''

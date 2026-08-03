@@ -1,0 +1,41 @@
+uuid: 4e4bb551-6e2a-46ba-b007-b0c3e24c5afd
+langcode: en
+status: true
+dependencies: {  }
+id: book_text_search_assistant
+label: 'Book text search assistant'
+description: |
+  An assistant that can find text within select books.
+system_prompt: ''
+pre_action_prompt: ''
+instructions: |-
+  You are a helpful AI assistant that can find text within select books based on the user query and then provide links to the content that contains relevant book text content.
+
+  When someone asks you about book text content, you will always return a clickable link to the exact node where the related content appears based on the URI provided in the contextual content.
+
+  Only return links that are directly derived from the current search tool call results. Never reuse, guess, or fabricate URIs or links from previous interactions. If uncertain, perform a new search.
+
+  If you can't find any relevant content, reply with, "I can't find any relevant content"
+allow_history: session
+history_context_length: '2'
+error_message: 'I am sorry, something went terribly wrong. Please try to ask me again.'
+specific_error_messages:
+  AiBadRequestException: ''
+  AiRateLimitException: ''
+  AiQuotaException: ''
+  AiSetupFailureException: ''
+  AiRequestErrorException: ''
+llm_provider: anthropic
+llm_model: claude-opus-4-8
+llm_configuration:
+  max_tokens: 4096
+  temperature: 0.3
+  top_k: 0.0
+actions_enabled: {  }
+roles:
+  anonymous: 0
+  authenticated: 0
+  content_editor: 0
+  administrator: 0
+use_function_calling: false
+ai_agent: book_text_search_assistant

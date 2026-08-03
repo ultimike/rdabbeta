@@ -12,7 +12,7 @@ name: 'AI RAG search (Pinecone)'
 description: ''
 backend: search_api_ai_search
 backend_config:
-  chat_model: ollama__llama3_1_8b
+  chat_model: anthropic__claude-sonnet-4-6
   database: pinecone
   database_settings:
     database_name: rdabbeta
@@ -25,8 +25,8 @@ backend_config:
   embedding_strategy: contextual_chunks
   embedding_strategy_configuration:
     chunk_size: '650'
-    chunk_min_overlap: '175'
-    contextual_content_max_percentage: '30'
+    chunk_min_overlap: '200'
+    contextual_content_max_percentage: '10'
     skip_moderation: true
   embedding_strategy_details: ''
   include_raw_embedding_vector: false

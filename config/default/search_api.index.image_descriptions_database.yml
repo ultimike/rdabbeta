@@ -1,26 +1,26 @@
-uuid: a3b8dad1-01a5-4c9e-be2a-49c2e6e2c743
+uuid: ad500785-c707-4982-bbcf-8896f944518d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_chapter_text
-    - search_api.server.ai_rag_search_pinecone
+    - field.storage.node.field_image_description
+    - search_api.server.image_descriptions_database
   module:
     - ai_search
     - node
-id: book_text_search
-name: 'Book text search'
+id: image_descriptions_database
+name: 'Image descriptions (database)'
 description: ''
 read_only: false
 field_settings:
-  processed:
-    label: 'Chapter text » Processed text'
+  field_image_description:
+    label: 'Image description'
     datasource_id: 'entity:node'
-    property_path: 'field_chapter_text:processed'
+    property_path: field_image_description
     type: text
     dependencies:
       config:
-        - field.storage.node.field_chapter_text
+        - field.storage.node.field_image_description
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -40,27 +40,33 @@ datasource_settings:
     bundles:
       default: false
       selected:
-        - book_chapter
+        - image_with_full_description
     languages:
       default: true
       selected: {  }
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
-  ai_search_score_threshold:
-    weights:
-      postprocess_query: 0
-    minimum_relevance_score: '0.1'
   custom_value: {  }
+  database_boost_by_ai_search:
+    weights:
+      preprocess_query: 0
+    search_api_ai_index: image_descriptions
+    minimum_relevance_score: 0.2
+    number_to_return: 10
+    exact_phrase_action: continue
+    exact_phrase_action_reduce_number: null
+    pass_conditions_fields: {  }
+    max_pager_iterations: null
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:
-  ai_search_tracker:
+  default:
     indexing_order: fifo
 options:
   cron_limit: 50
   delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
-server: ai_rag_search_pinecone
+server: image_descriptions_database

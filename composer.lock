@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "060726c97ff897d6fb63c3dbf0d65b06",
+    "content-hash": "3c5ba7213eb60f3f0c92d1d832acfd2e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1687,6 +1687,111 @@
             }
         },
         {
+            "name": "drupal/ai_context",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_context.git",
+                "reference": "1.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_context-1.0.0-beta3.zip",
+                "reference": "1.0.0-beta3",
+                "shasum": "a20b3f73dfe1a27942d79dde636e9bebe8ad025a"
+            },
+            "require": {
+                "drupal/ai": "^1.4 || ^2",
+                "drupal/ai_agents": "^1.2",
+                "drupal/core": "^10.5 || ^11.2",
+                "league/commonmark": "^2.4"
+            },
+            "require-dev": {
+                "drupal/ai": "*",
+                "drupal/ai_agents_debugger": "^1.0@beta",
+                "drupal/ai_file_to_text": "^1.0",
+                "drupal/diff": "^1.0",
+                "drupal/document_loader": "^2.0.3",
+                "drupal/document_loader_mdx": "*",
+                "drupal/document_loader_media": "*",
+                "drupal/dynamic_entity_reference": "^3.2",
+                "drupal/scheduler": "^2.3",
+                "drupal/scheduler_content_moderation_integration": "^3.0",
+                "drush/drush": "^12|^13"
+            },
+            "suggest": {
+                "cweagans/composer-patches": "Required for sites to apply the temporary patches declared in extra.patches.",
+                "drupal/ai_file_to_text": "Provides markdown editor importer support Word, PDFs, and a few other document formats.",
+                "drupal/canvas": "Required when using Context Items on Canvas-enabled sites; see extra.patches for a StringLongItemOverride workaround.",
+                "drupal/diff": "Allows you to compare revisions of context items",
+                "drupal/document_loader": "Provides markdown editor importer for common files (txt, md, pdf, docx, xlsx).",
+                "drupal/document_loader_webpage": "Provides markdown editor importer for URL content.",
+                "drupal/dynamic_entity_reference": "Scope plugin that allows you to associate context with one or more entity items.",
+                "drupal/scheduler": "Schedule publishing and unpublishing of context items.",
+                "drupal/scheduler_content_moderation_integration": "Schedule moderation state changes for context items."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta3",
+                    "datestamp": "1784427287",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "patches": {
+                    "drupal/canvas": {
+                        "3575644 - Skip StringLongItemOverride regex for ai_context_item": "patches/canvas-3575644-string-long-regex-ai-context-item.patch"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "lint": [
+                    "@lint:cspell",
+                    "@lint:phpcs",
+                    "@lint:phpstan",
+                    "@lint:eslint",
+                    "@lint:stylelint"
+                ],
+                "lint:cspell": [
+                    "npx --yes cspell \"**/*.{php,js,yml,md,twig,css}\" --config .cspell.json"
+                ],
+                "lint:phpcs": [
+                    "cd ../../../.. && vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,yml --ignore='*/.gitlab/*' web/modules/contrib/ai_context"
+                ],
+                "lint:phpstan": [
+                    "cd ../../../.. && php -d memory_limit=512M vendor/bin/phpstan analyze web/modules/contrib/ai_context --configuration=web/modules/contrib/ai_context/phpstan.neon.dist"
+                ],
+                "lint:eslint": [
+                    "npx --yes eslint js/**/*.js"
+                ],
+                "lint:stylelint": [
+                    "../../../core/node_modules/.bin/stylelint --config .stylelint-local.json --config-basedir ../../../core \"css/**/*.css\""
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "kristen pol",
+                    "homepage": "https://www.drupal.org/user/8389"
+                },
+                {
+                    "name": "kurtfoster",
+                    "homepage": "https://www.drupal.org/user/403040"
+                }
+            ],
+            "description": "Manage AI context used in agent prompts for better AI outcomes.",
+            "homepage": "https://www.drupal.org/project/ai_context",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_context",
+                "issues": "https://drupal.org/project/issues/ai_context"
+            }
+        },
+        {
             "name": "drupal/ai_integration_eca",
             "version": "1.0.0-rc3",
             "source": {
@@ -1859,17 +1964,17 @@
         },
         {
             "name": "drupal/ai_provider_amazeeio",
-            "version": "1.3.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_provider_amazeeio.git",
-                "reference": "1.3.3"
+                "reference": "1.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_provider_amazeeio-1.3.3.zip",
-                "reference": "1.3.3",
-                "shasum": "f68db357313bc8a7e279d165531c88f9ae940ad0"
+                "url": "https://ftp.drupal.org/files/projects/ai_provider_amazeeio-1.3.4.zip",
+                "reference": "1.3.4",
+                "shasum": "789039b901cf7251a8aebd35620081ca8e6ae236"
             },
             "require": {
                 "drupal/ai": "^1.3",
@@ -1884,8 +1989,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.3.3",
-                    "datestamp": "1784130248",
+                    "version": "1.3.4",
+                    "datestamp": "1785575176",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3499,7 +3604,7 @@
             "extra": {
                 "drupal": {
                     "version": "1.0.0-beta3",
-                    "datestamp": "1785453495",
+                    "datestamp": "1785536139",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -4462,16 +4567,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.8.3",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7"
+                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/1902f60f984235023acbe03db6ad614a37b3c3e7",
-                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
+                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
                 "shasum": ""
             },
             "require": {
@@ -4508,7 +4613,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.9-dev"
+                    "dev-main": "2.10-dev"
                 }
             },
             "autoload": {
@@ -4565,7 +4670,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-12T15:29:16+00:00"
+            "time": "2026-08-03T13:42:31+00:00"
         },
         {
             "name": "league/config",
@@ -9954,6 +10059,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "drupal/ai_context": 10,
         "drupal/ai_integration_eca": 5,
         "drupal/ai_logging-ai_logging": 15,
         "drupal/ai_metering": 10,

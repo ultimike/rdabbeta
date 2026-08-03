@@ -5,7 +5,7 @@ prompt_logging_tags: ''
 default_providers:
   chat:
     provider_id: amazeeio
-    model_id: claude-4-6-sonnet
+    model_id: claude-4-7-opus
   chat_with_complex_json:
     provider_id: amazeeio
     model_id: chat_with_complex_json

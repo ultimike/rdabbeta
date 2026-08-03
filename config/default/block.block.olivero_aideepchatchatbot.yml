@@ -18,14 +18,14 @@ settings:
   label: 'AI Chatbot'
   label_display: visible
   provider: ai_chatbot
-  ai_assistant: image_finder_assistant
+  ai_assistant: book_text_search_assistant
   bot_name: 'Helpy McHelperson'
   bot_image: /modules/contrib/ai/modules/ai_chatbot/assets/ai-icon-gradient.svg
   use_username: 0
   default_username: ''
   use_avatar: 0
   default_avatar: ''
-  first_message: 'Hello, please search our images.'
+  first_message: 'Hello, please search our book text.'
   loading_message: ''
   stream: null
   toggle_state: remember

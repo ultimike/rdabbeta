@@ -11,6 +11,7 @@ module:
   ai_chatbot: 0
   ai_ckeditor: 0
   ai_content_suggestions: 0
+  ai_context: 0
   ai_integration_eca: 0
   ai_logging: 0
   ai_metering: 0
@@ -28,6 +29,7 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config: 0
+  content_moderation: 0
   contextual: 0
   csv_serialization: 0
   datetime: 0
@@ -71,6 +73,7 @@ module:
   path_alias: 0
   rest: 0
   search_api: 0
+  search_api_db: 0
   serialization: 0
   system: 0
   taxonomy: 0
@@ -86,6 +89,7 @@ module:
   user: 0
   views_data_export: 0
   views_ui: 0
+  workflows: 0
   views: 10
   standard: 1000
 theme:

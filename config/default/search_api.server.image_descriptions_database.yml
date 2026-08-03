@@ -1,0 +1,15 @@
+uuid: 8db85474-85c4-493d-9309-846db34fe98c
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: image_descriptions_database
+name: 'Image descriptions (database)'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 2
+  matching: words
+  phrase: bigram
