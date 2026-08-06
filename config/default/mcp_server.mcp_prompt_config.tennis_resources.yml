@@ -1,0 +1,62 @@
+uuid: 0f883893-82a2-444b-a867-559dea1df0a1
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: sdUUZ8ynRzezSAr8U7zNFCuazyDjXjMICQ81dhXs7aE
+id: tennis_resources
+label: 'Tennis Learning Resources'
+title: 'Curated tennis learning resources'
+description: 'Provides access to external tennis training resources'
+arguments:
+  -
+    label: Topic
+    machine_name: topic
+    description: 'Specific tennis topic (strategy, technique, fitness, mental game)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - strategy
+            - technique
+            - fitness
+            - 'mental game'
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'I want to learn about {{ topic }} in tennis. What resources do you recommend?'
+      -
+        type: resource
+        resource:
+          uri: 'https://www.itftennis.com/en/about-us/governance/rules-and-regulations/'
+          mimeType: text/html
+          text: 'Official ITF Tennis Rules and Regulations - Essential reading for understanding the game'
+  -
+    role: assistant
+    content:
+      -
+        type: text
+        text: |-
+          For {{ topic }}, I recommend these resources:
+
+          **Official Rules**: The ITF resource provided covers all official regulations
+
+          **Key Areas to Focus**:
+          - Court positioning and movement
+          - Shot selection based on game situations
+          - Physical conditioning specific to tennis
+          - Mental toughness and match psychology
+
+          **Practice Recommendations**:
+          1. Start with fundamental drills
+          2. Record your practice sessions
+          3. Analyze professional matches
+          4. Work with a certified coach when possible

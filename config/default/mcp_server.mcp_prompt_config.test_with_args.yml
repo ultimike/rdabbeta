@@ -1,0 +1,47 @@
+uuid: 2c106713-6aad-43af-ae1a-bbd00bc6ecf0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: '-OmV3R2ZA3fHAr3NV_5mbmUIkM2cqe_AiC2DL4h_DiI'
+id: test_with_args
+label: 'Test Prompt With Arguments'
+title: 'Tennis Match Analysis'
+description: 'Analyze a tennis match based on player and context'
+arguments:
+  -
+    label: 'Skill Level'
+    machine_name: skill_level
+    description: 'Player skill level (beginner, intermediate, advanced)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - beginner
+            - intermediate
+            - advanced
+  -
+    label: Surface
+    machine_name: surface
+    description: 'Court surface type (clay, grass, hard)'
+    required: false
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - clay
+            - grass
+            - hard
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Analyze match for {{skill_level}} on {{surface}}'

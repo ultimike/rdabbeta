@@ -1,0 +1,47 @@
+uuid: cf579f52-5572-40ba-9c69-2756d0e32cd3
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: 22BfKQ6Ecga0hfEDg_0l96eukSPYL7jGFdJWQkgGw64
+id: serve_technique
+label: 'Tennis Serve Technique Analyzer'
+title: 'Analyze serve technique from demonstration'
+description: 'Analyzes tennis serve technique using a reference image'
+arguments:
+  -
+    label: 'Player Name'
+    machine_name: player_name
+    description: 'Name of the player being analyzed'
+    required: false
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Analyze this tennis serve technique. Identify key points about grip, ball toss, racket position, and follow-through.'
+      -
+        type: image
+        data: /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKAP/2Q==
+        mimeType: image/jpeg
+  -
+    role: assistant
+    content:
+      -
+        type: text
+        text: |-
+          I'll analyze the serve technique shown in this image. Looking at the key elements:
+
+          1. **Grip**: The continental grip appears to be used, which is ideal for serves
+          2. **Ball Toss**: The toss position is slightly in front and to the right (for right-handers)
+          3. **Racket Position**: The trophy position is well-formed with good shoulder rotation
+          4. **Follow-through**: Full extension with proper weight transfer
+
+          Key recommendations:
+          - Maintain consistent toss height
+          - Focus on pronation at contact point
+          - Ensure full hip and shoulder rotation

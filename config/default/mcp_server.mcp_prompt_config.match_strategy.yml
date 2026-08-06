@@ -1,0 +1,92 @@
+uuid: 5a59df8d-c626-40b3-94d0-be9a05348781
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: 4zHXV1b8mzAwjwBP-k14kdn00Qj8LLsx4tv6uKLVJPk
+id: match_strategy
+label: 'Tennis Match Strategy Assistant'
+title: 'Match strategy and tactical planning'
+description: 'Helps develop match strategy against different opponent types'
+arguments:
+  -
+    label: 'Opponent Type'
+    machine_name: opponent_type
+    description: 'Type of opponent (baseline grinder, serve-and-volley, aggressive baseliner, all-court player)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - 'baseline grinder'
+            - serve-and-volley
+            - 'aggressive baseliner'
+            - 'all-court player'
+  -
+    label: 'Court Surface'
+    machine_name: court_surface
+    description: 'Court surface (hard, clay, grass)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - hard
+            - clay
+            - grass
+  -
+    label: 'Player Strengths'
+    machine_name: player_strengths
+    description: 'Your main strengths as a player'
+    required: false
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Create a match strategy for playing against a {{ opponent_type }} on {{ court_surface }} courts. My strengths are {{ player_strengths }}.'
+  -
+    role: assistant
+    content:
+      -
+        type: text
+        text: |-
+          # Match Strategy vs {{ opponent_type }}
+          ## Court: {{ court_surface }}
+
+          ### Pre-Match Preparation
+          - Study opponent's patterns
+          - Warm up with emphasis on your {{ player_strengths }}
+          - Mental game: Stay positive and patient
+
+          ### Tactical Approach
+          1. **Serve Strategy**
+             - Target weak return side
+             - Vary pace and spin
+             - Use court surface characteristics
+
+          2. **Return Strategy**
+             - Neutralize opponent's serve
+             - Position based on opponent type
+             - Aggressive on second serves
+
+          3. **Rally Patterns**
+             - Exploit opponent weaknesses
+             - Use your {{ player_strengths }}
+             - Adapt to court surface speed
+
+          ### Key Adjustments
+          - Monitor what's working
+          - Make tactical changes between games
+          - Stay flexible and adapt
+
+          ### Mental Reminders
+          - Play your game, not your opponent's
+          - One point at a time
+          - Trust your training

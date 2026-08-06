@@ -3,31 +3,26 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ai
     - tool_ai_connector
+    - tool_belt_content
 id: update_node_or_media_item_field_value
 label: 'Update node or media item field value'
 description: 'This agent knows how to change a field value for nodes and media items, provided it is given the entity ID, field name, and new value.'
 system_prompt: |-
   You are an AI agent that knows how to update field values on Drupal nodes and media items provided you are given an entity ID, a field name, and a new field value.
 
-  \* If you are not provided with an entity ID, then respond that you can't update any field values.
-
-  \* If you are given an entity ID, then load the entity using the List content entities tool using the provided entity type and entity ID.
-
-  \* If you are not given a field name, then respond with "The task cannot be completed without a field name."
-
-  \* If there is a field on the entity that that matches the field name provided to you, then use the Set field value tool to set the new field value. Be sure to pass it the entity using the format "node:NODE_ID" or "media:MEDIA_ID". For example, if the node to be updated has a node id of 7, then the entity value should be "node:7".
-
-  \* Always use either the Save content item tool or the Save media item tool to save the updated entity after using the Set field value tool.
-
-  \* Confirm that all fields were updated correctly using the List content entities tool again - when complete, tell me that you have confirmed that it worked.
+  * If you are not provided with an entity ID, then respond that you can't update any field values.
+  * If you are given an entity ID, then load the entity using the Load entity by ID tool using the provided entity type and entity ID.
+  * If you are not given a field name, then respond with "The task cannot be completed without a field name."
+  * If there is a field on the entity that that matches the field name provided to you, then use the Set field value tool to set the new field value. Be sure to pass it the entity via the handle provided by the Load entity by ID tool.
+  * Use the Save entity tool to save the updated entity after using the Set field value tool. Pass the handle from the Load entity by ID tool to the Save entity tool.&#x20;
+  * Confirm that all fields were updated correctly using the Load entity by ID tool again, passing the handle to the Get field values tool as well as the field name and confirming the new value of the field is present - when complete, tell me that you have confirmed that it worked.
 secured_system_prompt: '[ai_agent:agent_instructions]'
 tools:
   'tool:tool_belt:field_set_value': true
-  'ai_agent:list_content_entities': true
-  'action_plugin:entity:save_action:node': true
-  'action_plugin:entity:save_action:media': true
+  'tool:tool_belt:entity_load_by_id': true
+  'tool:tool_belt:entity_save': true
+  'tool:tool_belt:entity_field_values': true
 tool_settings:
   'tool:tool_belt:field_set_value':
     return_directly: 0
@@ -35,19 +30,19 @@ tool_settings:
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-  'ai_agent:list_content_entities':
+  'tool:tool_belt:entity_load_by_id':
     return_directly: 0
     require_usage: 0
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-  'action_plugin:entity:save_action:node':
+  'tool:tool_belt:entity_save':
     return_directly: 0
     require_usage: 0
     description_override: ''
     progress_message: ''
     use_artifacts: 0
-  'action_plugin:entity:save_action:media':
+  'tool:tool_belt:entity_field_values':
     return_directly: 0
     require_usage: 0
     description_override: ''
@@ -60,16 +55,9 @@ max_loops_message: ''
 default_information_tools: ''
 tool_usage_limits:
   'tool:tool_belt:field_set_value': {  }
-  'ai_agent:list_content_entities':
-    entity_type:
-      action: only_allow
-      values:
-        - node
-        - media
-      hide_property: 0
-      not_break: 0
-  'action_plugin:entity:save_action:node': {  }
-  'action_plugin:entity:save_action:media': {  }
+  'tool:tool_belt:entity_load_by_id': {  }
+  'tool:tool_belt:entity_save': {  }
+  'tool:tool_belt:entity_field_values': {  }
 exclude_users_role: false
 masquerade_roles: {  }
 structured_output_enabled: false

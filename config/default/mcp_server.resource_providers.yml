@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: 7hCUbDt4WFAn1l__FeIXlJeWK7yTrlKPDgPF8HWND5E
+plugins:
+  -
+    id: content_type_list
+    enabled: true
+    configuration:
+      enabled: true

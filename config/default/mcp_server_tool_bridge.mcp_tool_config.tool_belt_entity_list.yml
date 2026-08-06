@@ -1,0 +1,7 @@
+uuid: 5a1b188e-453e-4ea3-8c3d-44b4f3974ff5
+langcode: en
+status: true
+dependencies: {  }
+id: tool_belt_entity_list
+tool_id: 'tool_belt:entity_list'
+description: "Query the live Drupal site for content entities (nodes, users, taxonomy terms, etc.). Returns counts and entity metadata. Use this whenever the user asks about content, taxonomy terms, users, or any other content entities that live in the Drupal database — do not attempt to query the DB directly or read settings.php.\r\n"

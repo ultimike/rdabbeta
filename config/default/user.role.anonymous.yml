@@ -6,6 +6,7 @@ dependencies:
     - filter.format.restricted_html
   module:
     - filter
+    - mcp_server
     - media
     - system
 _core:
@@ -16,5 +17,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
+  - 'access mcp server'
   - 'use text format restricted_html'
   - 'view media'

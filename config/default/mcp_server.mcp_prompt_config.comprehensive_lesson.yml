@@ -1,0 +1,92 @@
+uuid: 18f28375-c7f3-4dd8-b04a-036e0245b253
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: jo54Bdc7rM2zd_bgoKLBvWLN6sbhZvMYKNc4B2i1QIo
+id: comprehensive_lesson
+label: 'Comprehensive Tennis Lesson'
+title: 'Complete tennis lesson with multimedia content'
+description: 'Full tennis lesson combining text instructions, visual demonstrations, audio cues, and external resources'
+arguments:
+  -
+    label: 'Lesson Focus'
+    machine_name: lesson_focus
+    description: 'Primary focus of the lesson (groundstrokes, net play, serving, returns)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - groundstrokes
+            - 'net play'
+            - serving
+            - returns
+  -
+    label: Duration
+    machine_name: duration
+    description: 'Lesson duration in minutes'
+    required: false
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Create a comprehensive {{ duration }}-minute tennis lesson focused on {{ lesson_focus }}. Include warmup, drills, and cool down.'
+      -
+        type: image
+        data: /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCACAAIADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKAP/2Q==
+        mimeType: image/jpeg
+      -
+        type: audio
+        data: UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=
+        mimeType: audio/wav
+      -
+        type: resource
+        resource:
+          uri: 'https://www.usta.com/en/home/improve/tips-and-instruction.html'
+          mimeType: text/html
+          text: 'USTA Tips and Instructions - Professional coaching resources'
+  -
+    role: assistant
+    content:
+      -
+        type: text
+        text: |-
+          # {{ lesson_focus }} Lesson Plan ({{ duration }} minutes)
+
+          ## Phase 1: Dynamic Warmup (10 minutes)
+          - Light jogging and side shuffles
+          - Arm circles and trunk rotations
+          - Mini tennis at service line
+          - **Audio cue**: Listen for proper contact rhythm (see audio)
+
+          ## Phase 2: Technical Focus ({{ duration - 20 }} minutes)
+          - Breakdown of proper technique (see image reference)
+          - Shadow swings focusing on form
+          - Progressive ball feeding drills
+          - Live ball rally practice
+
+          **Key Technical Points** (from image):
+          - Proper grip and stance
+          - Unit turn and shoulder rotation
+          - Contact point and follow-through
+          - Weight transfer and balance
+
+          ## Phase 3: Match Play Simulation (5 minutes)
+          - Point play incorporating lesson focus
+          - Competitive scenarios
+          - Mental game practice
+
+          ## Phase 4: Cool Down (5 minutes)
+          - Gentle stretching
+          - Lesson review and Q&A
+
+          **Additional Resources**: Check the USTA link for supplementary drills and pro tips.
+
+          **Homework**: Practice shadow swings 20 reps daily, focusing on the rhythm from the audio demonstration.

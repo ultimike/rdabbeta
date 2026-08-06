@@ -1,0 +1,40 @@
+uuid: 6f63f0ad-2358-4e3e-9d61-d4a5d34239ab
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: poiRVetKB3rruPCgMsJ1RlC3fALdITxU90myvyCxtJ8
+id: multi_provider_prompt
+label: 'Multi Provider Prompt'
+title: 'Prompt with multiple completion providers'
+description: 'Verifies chained completions for MCP arguments.'
+arguments:
+  -
+    label: 'Opponent Type'
+    machine_name: opponent_type
+    description: 'Type of opponent to strategize against.'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - 'baseline grinder'
+            - serve-and-volley
+            - 'aggressive baseliner'
+            - 'all-court player'
+      -
+        plugin_id: entity_query
+        configuration:
+          entity_type: node
+          bundle: article
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Plan for {{ opponent_type }}'

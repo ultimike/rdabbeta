@@ -1,0 +1,25 @@
+_core:
+  default_config_hash: 1eFOl7kZ5CJlEoNIIz3gcXFsRLVURuEvH1JGaehoEdE
+plugins:
+  -
+    id: content_entity
+    enabled: true
+    configuration:
+      enabled: false
+      require_canonical_url: true
+      denied_entity_types:
+        - ai_file
+        - ai_agent_decision
+        - automator_chain
+        - ai_context_item
+        - ai_context_usage
+        - ai_log
+        - block_content
+        - content_moderation_state
+        - file
+        - media
+        - menu_link_content
+        - path_alias
+        - search_api_task
+        - taxonomy_term
+        - user

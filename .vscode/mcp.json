@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "drupal-mcp": {
+      "type": "http",
+      "url": "https://rdabbeta.ddev.site/mcp"
+    }
+  }
+}

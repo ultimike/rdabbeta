@@ -1,0 +1,43 @@
+uuid: e173a0ae-8a39-488b-9433-090894b38f00
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: veXhbTgKg7nl-GS_Z_KloA4sYw7FCJZPPA9u37FeErc
+id: audio_coaching
+label: 'Audio Tennis Coaching Session'
+title: 'Tennis coaching with audio demonstration'
+description: 'Provides tennis coaching with audio instructions for rhythm and timing'
+arguments: {  }
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Provide a detailed breakdown of the tennis footwork patterns demonstrated in this audio clip. Explain the rhythm and timing.'
+      -
+        type: audio
+        data: UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=
+        mimeType: audio/wav
+  -
+    role: assistant
+    content:
+      -
+        type: text
+        text: |-
+          Based on the audio pattern, here's the footwork analysis:
+
+          **Split Step Timing**: The quick double-tap sound indicates proper split step execution just as the opponent makes contact.
+
+          **Movement Pattern**: The shuffle steps show good lateral movement with quick, short steps maintaining balance.
+
+          **Rhythm**: The 1-2-3 beat pattern demonstrates:
+          1. Split step (preparation)
+          2. First step toward the ball (explosive start)
+          3. Adjustment steps (fine-tuning position)
+
+          Practice this rhythm without a ball first to develop muscle memory.

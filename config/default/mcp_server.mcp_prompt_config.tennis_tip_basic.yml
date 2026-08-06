@@ -1,0 +1,49 @@
+uuid: ff719abf-6428-4fbe-9470-3fc0019de5d6
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - mcp_server_examples
+_core:
+  default_config_hash: OGyL8ZNiGI87n7PEuO0ITJSMTXq4osOTLuxzAZqMXEo
+id: tennis_tip_basic
+label: 'Tennis Tip Generator'
+title: 'Generate personalized tennis tips'
+description: 'Provides customized tennis tips based on skill level and focus area'
+arguments:
+  -
+    label: 'Skill Level'
+    machine_name: skill_level
+    description: 'Player skill level (beginner, intermediate, advanced)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - beginner
+            - intermediate
+            - advanced
+  -
+    label: 'Focus Area'
+    machine_name: focus_area
+    description: 'Area to focus on (serve, forehand, backhand, volley, footwork)'
+    required: true
+    completion_providers:
+      -
+        plugin_id: static_list
+        configuration:
+          values:
+            - serve
+            - forehand
+            - backhand
+            - volley
+            - footwork
+messages:
+  -
+    role: user
+    content:
+      -
+        type: text
+        text: 'Generate a tennis tip for a {{ skill_level }} player focusing on {{ focus_area }}. Include specific drills and common mistakes to avoid.'

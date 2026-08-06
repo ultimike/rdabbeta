@@ -24,3 +24,4 @@ permissions:
   - 'use ai_metering'
   - 'use text format basic_html'
   - 'view media'
+  - 'view own ai metering usage'
